@@ -40,7 +40,7 @@ const ServiceDetails = () => {
   const combined = useSelector((state) => state.logMember.combined);
 
   const { service, error:serviceDetailError } = useSelector(state => state.serviceDetails);
-  const { error, services } = useSelector((state) => state.services);
+  const { error, services = [] } = useSelector((state) => state.services);
   const { deleteError, isDeleted } = useSelector((state) => state.serviceDU);
   // console.log(service)
   

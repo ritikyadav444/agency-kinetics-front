@@ -20,11 +20,11 @@ import axios from 'axios';
 const Dashboard = () => {
 
   const dispatch = useDispatch()
-  const {combined: clients} = useSelector((state)=>state.clients);
-  const { orders } = useSelector((state) => state.orders);
-  const {invoices} = useSelector((state)=>state.invoices)
-  const {tickets} = useSelector((state)=>state.tickets)
-  const {quotes} = useSelector((state)=>state.quotes)
+  const {combined: clients = []} = useSelector((state)=>state.clients);
+  const { orders = [] } = useSelector((state) => state.orders);
+  const {invoices = []} = useSelector((state)=>state.invoices)
+  const {tickets = []} = useSelector((state)=>state.tickets)
+  const {quotes = []} = useSelector((state)=>state.quotes)
   // useEffect(() => {
   //   if (orders && orders.length > 0) {
   //     orders.forEach(order => {

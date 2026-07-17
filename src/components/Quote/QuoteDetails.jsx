@@ -58,7 +58,7 @@ const QuoteDetails = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch();
   const { quote, error:quoteDetailError } = useSelector(state => state.quoteDetails);
-  const {error, loading,quotes} = useSelector((state)=>state.quotes)
+  const {error, loading, quotes = []} = useSelector((state)=>state.quotes)
   const { deleteError, isDeleted } = useSelector((state) => state.quoteDU);
     // console.log('oiqeoipwei', quote)
   const handleBreadcrumbClick = () => {

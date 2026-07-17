@@ -58,7 +58,7 @@ const OrderDetails = () => {
   };
   const role = formatRole(combined.user.role)
   const { deleteError, isDeleted } = useSelector((state) => state.orderDU);
-  const {error, loading, orders} = useSelector((state)=>state.orders)
+  const {error, loading, orders = []} = useSelector((state)=>state.orders)
 
   const [selectedOrderId, setSelectedOrderId] = useState('')
   const [openUpdateModal, setOpenUpdateModal] = useState(false);

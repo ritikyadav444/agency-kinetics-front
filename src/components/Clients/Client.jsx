@@ -93,7 +93,7 @@ const Client = () => {
   const {
     error,
     loading,
-    combined: clients,
+    combined: clients = [],
   } = useSelector((state) => state.clients);
   const { error: deleteError, isDeleted } = useSelector(
     (state) => state.clientDU

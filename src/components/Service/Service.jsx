@@ -87,7 +87,7 @@ const updateStyle = {
 const Service = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { error, loading, services } = useSelector((state) => state.services);
+  const { error, loading, services = [] } = useSelector((state) => state.services);
   const { deleteError, isDeleted } = useSelector((state) => state.serviceDU);
   const [openModal, setOpenModal] = useState(false);
   const combined = useSelector((state) => state.logMember.combined);

@@ -12,7 +12,7 @@ import { getTeams } from '../../actions/teamAction';
 const SubscriptionCheckout = () => {
     const dispatch = useDispatch();
     const [subscriptionDetails, setSubscriptionDetails] = useState(null);
-    const {combined:teams} = useSelector((state)=>state.teams)
+    const {combined: teams = []} = useSelector((state)=>state.teams)
     const numberOfMembers = (teams?.length || 1) - 1
     const combined = useSelector((state) => state.logMember.combined);
     const location = useLocation();

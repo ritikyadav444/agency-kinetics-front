@@ -19,13 +19,13 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 const ClientDashboard = () => {
 
   const dispatch = useDispatch()
-  const { orders } = useSelector((state) => state.orders);
-  const {invoices} = useSelector((state)=>state.invoices)
-  const {quotes} = useSelector((state)=>state.quotes)
+  const { orders = [] } = useSelector((state) => state.orders);
+  const {invoices = []} = useSelector((state)=>state.invoices)
+  const {quotes = []} = useSelector((state)=>state.quotes)
   // console.log(orders)
-  
-  
-  const {tickets} = useSelector((state)=>state.tickets)
+
+
+  const {tickets = []} = useSelector((state)=>state.tickets)
   
 
   const combined = useSelector((state) => state.logMember.combined);

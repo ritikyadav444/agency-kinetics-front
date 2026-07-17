@@ -62,7 +62,7 @@ const { order, error:orderDetailError } = useSelector(state => state.orderDetail
   const dispatch = useDispatch()
   const navigate = useNavigate()
   // const [tasks, setTasks] = useState([]);
-  const {error, loading, tasks} = useSelector((state)=>state.tasks)
+  const {error, loading, tasks = []} = useSelector((state)=>state.tasks)
   // console.log(tasks)
   const combined = useSelector((state) => state.logMember.combined);
 

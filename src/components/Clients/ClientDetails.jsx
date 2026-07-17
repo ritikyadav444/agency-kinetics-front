@@ -37,7 +37,7 @@ const ClientDetails = () => {
   const dispatch = useDispatch();
   const { combined: client, error:clientDetailError } = useSelector(state => state.clientDetails);
   // console.log(client)
-  const { error, loading, combined: clients } = useSelector((state) => state.clients);
+  const { error, loading, combined: clients = [] } = useSelector((state) => state.clients);
   const { error: deleteError, isDeleted } = useSelector((state) => state.clientDU);
   const combined = useSelector((state) => state.logMember.combined);
 

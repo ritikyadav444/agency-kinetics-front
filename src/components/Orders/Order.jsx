@@ -121,7 +121,7 @@ const Order = () => {
     combined?.user?._id
   );
 
-  const { error, loading, orders } = useSelector((state) => state.orders);
+  const { error, loading, orders = [] } = useSelector((state) => state.orders);
   // console.log(orders)
 
   // const [orders, setOrders] = useState([]);
@@ -149,7 +149,7 @@ const Order = () => {
   const {
     error: taskError,
     loading: taskLoading,
-    tasks,
+    tasks = [],
   } = useSelector((state) => state.tasks);
   // console.log(tasks)
   const assigneeOrders = orders.filter(
@@ -158,9 +158,9 @@ const Order = () => {
   // console.log(assigneeOrders)
 
   const { deleteError, isDeleted } = useSelector((state) => state.orderDU);
-  const { combined: clients, loading: loadingClientDetails } = useSelector((state) => state.clients);
-  const { services, loading: loadingServiceDetails } = useSelector((state) => state.services);
-  const { combined: teamMembers, loading: loadingAssigneeDetails } = useSelector((state) => state.teams);
+  const { combined: clients = [], loading: loadingClientDetails } = useSelector((state) => state.clients);
+  const { services = [], loading: loadingServiceDetails } = useSelector((state) => state.services);
+  const { combined: teamMembers = [], loading: loadingAssigneeDetails } = useSelector((state) => state.teams);
 
   const clientNamesMap = useMemo(() => {
     const map = {};

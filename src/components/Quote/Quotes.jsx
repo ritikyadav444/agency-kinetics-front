@@ -125,7 +125,7 @@ const Quotes = () => {
   const role = formatRole(combined.user.role);
   // console.log(role)
 
-  const { error, loading, quotes } = useSelector((state) => state.quotes);
+  const { error, loading, quotes = [] } = useSelector((state) => state.quotes);
   const clientQuotes = quotes.filter(
     (quote) => quote.clientId === combined.user._id
   );
@@ -145,8 +145,8 @@ const Quotes = () => {
   };
   const handleUpdateClose = () => setOpenUpdateModal(false);
 
-  const { combined: clients, loading: loadingClientDetails } = useSelector((state) => state.clients);
-  const { services, loading: loadingServiceDetails } = useSelector((state) => state.services);
+  const { combined: clients = [], loading: loadingClientDetails } = useSelector((state) => state.clients);
+  const { services = [], loading: loadingServiceDetails } = useSelector((state) => state.services);
 
   const clientNamesMap = useMemo(() => {
     const map = {};

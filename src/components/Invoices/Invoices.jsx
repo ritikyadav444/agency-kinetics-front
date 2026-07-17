@@ -101,7 +101,7 @@ const Invoices = () => {
   const dispatch = useDispatch();
   const combined = useSelector((state) => state.logMember.combined);
   const { deleteError, isDeleted } = useSelector((state) => state.invoiceDU);
-  const { error, loading, invoices } = useSelector((state) => state.invoices);
+  const { error, loading, invoices = [] } = useSelector((state) => state.invoices);
   // console.log(invoices)
   const clientInvoices =
     invoices?.filter((invoice) => invoice.client_name === combined.user._id) ||
@@ -132,9 +132,9 @@ const Invoices = () => {
   const role = formatRole(combined.user.role);
   // console.log(role, role)
 
-  const { combined: clients, loading: loadingClientDetails } = useSelector((state) => state.clients);
-  const { services, loading: loadingOSDetails } = useSelector((state) => state.services);
-  const { orders } = useSelector((state) => state.orders);
+  const { combined: clients = [], loading: loadingClientDetails } = useSelector((state) => state.clients);
+  const { services = [], loading: loadingOSDetails } = useSelector((state) => state.services);
+  const { orders = [] } = useSelector((state) => state.orders);
 
   const clientNamesMap = useMemo(() => {
     const map = {};

@@ -85,7 +85,7 @@ const Ticket = () => {
     combined?.user?._id
   );
 
-  const { error, loading, tickets } = useSelector((state) => state.tickets);
+  const { error, loading, tickets = [] } = useSelector((state) => state.tickets);
   const clientTickets = tickets.filter(
     (ticket) => ticket.client_name === combined.user._id
   );
@@ -96,9 +96,9 @@ const Ticket = () => {
   // console.log(assigneeTickets)
 
   const { deleteError, isDeleted } = useSelector((state) => state.ticketDU);
-  const { combined: clients, loading: loadingClientDetails } = useSelector((state) => state.clients);
-  const { combined: teamMembers, loading: loadingAssigneeDetails } = useSelector((state) => state.teams);
-  const { orders, loading: loadingOrderDetails } = useSelector((state) => state.orders);
+  const { combined: clients = [], loading: loadingClientDetails } = useSelector((state) => state.clients);
+  const { combined: teamMembers = [], loading: loadingAssigneeDetails } = useSelector((state) => state.teams);
+  const { orders = [], loading: loadingOrderDetails } = useSelector((state) => state.orders);
 
   const clientNamesMap = useMemo(() => {
     const map = {};

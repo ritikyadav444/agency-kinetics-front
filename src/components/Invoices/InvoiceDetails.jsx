@@ -39,7 +39,7 @@ const InvoiceDetails = () => {
   const { id } = useParams()
   const dispatch = useDispatch();
   const { invoice, error:invoiceDetailError } = useSelector(state => state.invoiceDetails);
-  const {error, loading,invoices} = useSelector((state)=>state.invoices)
+  const {error, loading, invoices = []} = useSelector((state)=>state.invoices)
   const { deleteError, isDeleted } = useSelector((state) => state.invoiceDU);
   const combined = useSelector((state) => state.logMember.combined);
   const name = combined.user.fname + ' ' + combined.user.lname

@@ -61,7 +61,7 @@ const TaskBoard = () => {
   const navigate = useNavigate();
 
   const { order, error: orderDetailError } = useSelector((state) => state.orderDetails);
-  const { error, loading, tasks } = useSelector((state) => state.tasks);
+  const { error, loading, tasks = [] } = useSelector((state) => state.tasks);
   const { error: deleteError, isDeleted } = useSelector((state) => state.taskDU);
   const combined = useSelector((state) => state.logMember.combined);
 

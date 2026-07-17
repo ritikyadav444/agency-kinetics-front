@@ -58,7 +58,7 @@ const style = {
 const Team = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch()
-  const {error, loading, combined:teams} = useSelector((state)=>state.teams)
+  const {error, loading, combined: teams = []} = useSelector((state)=>state.teams)
   const { error: deleteError, isDeleted } = useSelector((state) => state.teamDU);
   const [selectedTeamId, setSelectedTeamId] = useState(null);
 
