@@ -1,0 +1,48 @@
+/* Overall loader container */
+.loading {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #f4f7fc, #e6ebf5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+}
+
+/* Spinner animation */
+.spinner {
+    width: 80px;
+    height: 80px;
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    border-top: 6px solid rgb(127, 86, 217); 
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1.5rem;
+}
+
+/* Loading text */
+.loading-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #555;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Fading animation for the text */
+@keyframes fadeIn {
+    from {
+        opacity: 0.6;
+    }
+    to {
+        opacity: 1;
+    }
+}
