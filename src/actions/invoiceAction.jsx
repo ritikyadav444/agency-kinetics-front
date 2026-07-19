@@ -79,6 +79,7 @@ export const createInvoice = (invoiceData) => async (dispatch) => {
       type: NEW_INVOICE_FAIL,
       payload: error.response?.data,
     });
+    return { error: error.response?.data?.message || error.message };
   }
 };
 

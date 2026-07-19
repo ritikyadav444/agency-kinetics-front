@@ -83,6 +83,7 @@ export const getServiceDetails = (id)=> async(dispatch)=>{
         type: NEW_SERVICE_FAIL,
         payload: error.response?.data,
       });
+      return { error: error.response?.data?.message || error.message };
     }
   };
 

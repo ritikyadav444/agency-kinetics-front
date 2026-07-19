@@ -186,7 +186,7 @@ const NewOrder = ({ handleClose }) => {
 
 
     const response = await dispatch(createOrder(myForm));
-    if (response.success) {
+    if (response?.success) {
         const id = response.order._id;
         const orderId = response.order.orderId;
 
@@ -215,7 +215,7 @@ const NewOrder = ({ handleClose }) => {
         dispatch({ type: NEW_ORDER_RESET });
         dispatch(getOrders());
 
-    } else if (response.error) {
+    } else if (response?.error) {
         handleClose();
         navigate("/orders", {
             state: {

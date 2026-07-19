@@ -88,32 +88,32 @@ const combined = useSelector((state) => state.logMember.combined);
   const renderHeader = () => {
     return (
       <>
-      <span class="ql-formats">
-      <select class="ql-font"></select>
-      <select class="ql-size"></select>
-      
+      <span className="ql-formats">
+      <select className="ql-font"></select>
+      <select className="ql-size"></select>
+
     </span>
-    <span class="ql-formats">
-      <button class="ql-bold"></button>
-      <button class="ql-italic"></button>
-      <button class="ql-underline"></button>
+    <span className="ql-formats">
+      <button className="ql-bold"></button>
+      <button className="ql-italic"></button>
+      <button className="ql-underline"></button>
     </span>
-    <span class="ql-formats">
-      <select class="ql-color"></select>
-      <select class="ql-background"></select>
+    <span className="ql-formats">
+      <select className="ql-color"></select>
+      <select className="ql-background"></select>
     </span>
-    <span class="ql-formats">
-      <button class="ql-script" value="sub"></button>
-      <button class="ql-script" value="super"></button>
+    <span className="ql-formats">
+      <button className="ql-script" value="sub"></button>
+      <button className="ql-script" value="super"></button>
     </span>
-    <span class="ql-formats">
-      <button class="ql-list" value="ordered"></button>
-      <button class="ql-list" value="bullet"></button>
-      <button class="ql-indent" value="-1"></button>
-      <button class="ql-indent" value="+1"></button>
+    <span className="ql-formats">
+      <button className="ql-list" value="ordered"></button>
+      <button className="ql-list" value="bullet"></button>
+      <button className="ql-indent" value="-1"></button>
+      <button className="ql-indent" value="+1"></button>
     </span>
-    <span class="ql-formats">
-      <select class="ql-align"></select>
+    <span className="ql-formats">
+      <select className="ql-align"></select>
     </span>
     </>
     );
@@ -234,7 +234,7 @@ const combined = useSelector((state) => state.logMember.combined);
       } : null
   };
     const response = await dispatch(createService(serviceData));
-    if (response.success) {
+    if (response?.success) {
         const id = response.service._id; 
         // const routeLink = `http://dashboard.agencykinetics.com/service/${id}`
         const routeLink = `http://app.agencykinetics.com/service/${id}`
@@ -259,12 +259,12 @@ const combined = useSelector((state) => state.logMember.combined);
         dispatch(getAllNotifications(combined.user._id));
       });
         
-    } else if (response.error) {
+    } else if (response?.error) {
       handleClose()
       navigate("/services", {
         state: {
           snackbar: {
-            message: `New Service Creation Failed as: ${error}`,
+            message: `New Service Creation Failed: ${response.error}`,
             severity: "error"
           }
         }

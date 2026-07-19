@@ -88,8 +88,9 @@ export const getClientDetails = (id)=> async(dispatch)=>{
     } catch (error) {
       dispatch({
         type: NEW_CLIENT_FAIL,
-        payload: error.response.data.message,
+        payload: error.response?.data?.message,
       });
+      return { error: error.response?.data?.message || error.message };
     }
   };
 

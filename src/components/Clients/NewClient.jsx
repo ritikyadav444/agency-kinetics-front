@@ -164,7 +164,7 @@ const NewClient = ({handleClose}) => {
       return;
     }
     const response = await dispatch(createClient({ email, password, fname, lname, country, state, city, postalCode, companyname, isClient }));
-    if (response.success) {
+    if (response?.success) {
         const id = response.combined._id; 
         // const routeLink = `http://dashboard.agencykinetics.com/client/${id}`
         const routeLink = `http://app.agencykinetics.com/client/${id}`
@@ -184,7 +184,7 @@ const NewClient = ({handleClose}) => {
           dispatch(getAllNotifications(combinedLog.user._id));
         });
 
-    } else if (response.error) {
+    } else if (response?.error) {
       handleClose()
       navigate("/clients", {
         state: {

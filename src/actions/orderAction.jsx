@@ -91,6 +91,7 @@ export const getOrderDetails = (id)=> async(dispatch)=>{
         type: NEW_ORDER_FAIL,
         payload: error.response?.data,
       });
+      return { error: error.response?.data?.message || error.message };
     }
   };
 

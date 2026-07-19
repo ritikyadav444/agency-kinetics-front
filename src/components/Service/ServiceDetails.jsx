@@ -281,8 +281,9 @@ const ServiceDetails = () => {
                       <Typography variant="body1" gutterBottom>{service.value} {service.unit}</Typography>
                     </div>
                   </Grid>
-                  <Grid 
-                    xs={12} 
+                  <Grid
+                    item
+                    xs={12}
                     style={{
                       padding: '10px',
                       marginBottom: '5px',

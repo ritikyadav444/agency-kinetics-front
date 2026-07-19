@@ -83,6 +83,7 @@ export const createTicket = (ticketData) => async (dispatch) => {
       type: NEW_TICKET_FAIL,
       payload: error.response?.data,
     });
+    return { error: error.response?.data?.message || error.message };
   }
 };
   

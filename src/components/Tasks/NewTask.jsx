@@ -169,7 +169,7 @@ const NewTask = ({ handleClose, orderId, status, setStatus }) => {
     myForm.set('end_date', selectedEndDate);
     
     const response = await dispatch(createTask(myForm, orderId));
-    if (response.success) {
+    if (response?.success) {
         const id = response.task._id; 
         const task_name = response.task.task_name; 
         const orderId = response.task.orderId; 
@@ -201,7 +201,7 @@ const NewTask = ({ handleClose, orderId, status, setStatus }) => {
       dispatch(getTasks(orderId)).then(() => {
         dispatch(getAllNotifications(combined.user._id));
       });
-    } else if (response.error) {
+    } else if (response?.error) {
       handleClose()
       navigate(`/task/order/${orderId}`, {
         state: {

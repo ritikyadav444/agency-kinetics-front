@@ -126,7 +126,7 @@ const NewInvoice = ({ handleClose }) => {
     const invoiceDataJson = JSON.stringify(invoiceData);
     
     const response = await dispatch(createInvoice(invoiceDataJson));
-    if (response.success) {
+    if (response?.success) {
         const id = response.invoice._id;  
         const invoiceId = response.invoice.invoiceId
         // const routeLink = `http://dashboard.agencykinetics.com/invoice/${id}`
@@ -151,7 +151,7 @@ const NewInvoice = ({ handleClose }) => {
         dispatch(getAllNotifications(combined.user._id));
       });
 
-    } else if (response.error) {
+    } else if (response?.error) {
       handleClose()
       navigate("/invoices", {
         state: {

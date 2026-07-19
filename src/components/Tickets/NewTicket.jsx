@@ -139,7 +139,7 @@ const NewTicket = ({ handleClose }) => {
     myForm.set('priority', priority);
     
     const response = await dispatch(createTicket(myForm));
-    if (response.success) {
+    if (response?.success) {
         const id = response.ticket._id; 
         const ticketId = response.ticket.ticketId; 
         // const routeLink = `http://dashboard.agencykinetics.com/ticket/${id}`
@@ -165,7 +165,7 @@ const NewTicket = ({ handleClose }) => {
           dispatch(getAllNotifications(combined.user._id));
         });
 
-    } else if (response.error) {
+    } else if (response?.error) {
       handleClose();
       navigate("/tickets", {
         state: {

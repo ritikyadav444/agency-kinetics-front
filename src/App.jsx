@@ -61,6 +61,7 @@ const UpdateTask = lazy(() => import("./components/Tasks/UpdateTask.jsx"));
 const Teamcompletion = lazy(() => import("./components/Teams/TeamCompletion.jsx"));
 const UpdatePassword = lazy(() => import("./Password/UpdatePassword.jsx"));
 const ForgotPassword = lazy(() => import("./Password/ForgotPassword.jsx"));
+const ForgotMailSent = lazy(() => import("./Password/ForgotMailSent.jsx"));
 const ResetPassword = lazy(() => import("./Password/ResetPassword.jsx"));
 const VerifyingFP = lazy(() => import("./Password/VerifyingFP.jsx"));
 const ClientDashboard = lazy(() => import("./DashBoard/ClientDashboard.jsx"));
@@ -125,6 +126,7 @@ function App() {
             <Route path="/combined/verifyTeam/:token?" element={<Teamcompletion />} />
             <Route path="/password/reset/:resetToken" element={<ResetPassword />} />
             <Route path="/password/forgot" element={<ForgotPassword />} />
+            <Route path="/forgotMailSent" element={<ForgotMailSent />} />
             <Route path="/profile" element={<UserProfile />} />
           </Routes>
           </Suspense>

@@ -203,7 +203,7 @@ const NewQuote = ({ handleClose }) => {
 
     const response = await dispatch(createQuote(quoteData));
 
-    if (response.success) {
+    if (response?.success) {
         const id = response.quote._id; 
         const quoteId = response.quote.quoteId
 
@@ -229,7 +229,7 @@ const NewQuote = ({ handleClose }) => {
           dispatch(getAllNotifications(combined.user._id));
         });
         
-    } else if (response.error) {
+    } else if (response?.error) {
       handleClose()
       navigate("/quotes", {
         state: {
